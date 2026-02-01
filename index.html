@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Valentine 💖</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ffafbd, #ffc3a0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      max-width: 400px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: fadeIn 1.2s ease;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #555;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    button {
+      margin: 15px 10px 0;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #ffd6e0;
+      color: #ff4d6d;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .heart {
+      position: absolute;
+      color: rgba(255,255,255,0.7);
+      animation: float 6s infinite ease-in;
+      font-size: 20px;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-10vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hearts">
+    <div class="heart" style="left:10%; animation-delay:0s;">💖</div>
+    <div class="heart" style="left:30%; animation-delay:2s;">💗</div>
+    <div class="heart" style="left:50%; animation-delay:1s;">💘</div>
+    <div class="heart" style="left:70%; animation-delay:3s;">💝</div>
+    <div class="heart" style="left:90%; animation-delay:4s;">❤️</div>
+  </div>
+
+  <div class="card" id="question">
+    <h1>Will you be my Valentine, my love? 💕</h1>
+    <p>
+      You are my favourite person, and I love you so much.
+      Even when things haven’t been easy, our love for each other
+      continues to grow stronger every single day.
+    </p>
+    <button class="yes" onclick="sayYes()">Yes 💖</button>
+    <button class="no" onclick="sayNo()">No 🙈</button>
+  </div>
+
+  <div class="card hidden" id="yesMessage">
+    <h1>Yay!! 💘</h1>
+    <p>
+      You make my heart so happy.  
+      I’m so grateful for you, for us, and for the love we share.
+      No matter what, I choose you — always. ❤️
+    </p>
+  </div>
+
+  <div class="card hidden" id="noMessage">
+    <h1>Still love you 💗</h1>
+    <p>
+      That’s okay — just know you’re still special to me,
+      and I’ll always care about you more than words can say.
+    </p>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.getElementById("question").classList.add("hidden");
+      document.getElementById("yesMessage").classList.remove("hidden");
+    }
+
+    function sayNo() {
+      document.getElementById("question").classList.add("hidden");
+      document.getElementById("noMessage").classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
